@@ -1,0 +1,56 @@
+Check out the "Complex Number Class Problem" from Coding Ninjas 
+https://www.codingninjas.com/codestudio/guided-paths/basics-of-c/content/118817/offering/1381814?utm_source=whatsapp&utm_medium=codestudio-social&utm_campaign=aa385f34-f4fc-4f07-ba92-b61840cf02ad
+
+
+#include <bits/stdc++.h> 
+#include<iostream>
+
+using namespace std;
+
+class ComplexNumbers {
+    // Complete this class
+    private:
+            int real=0,img=0;
+    public:
+            ComplexNumbers(int r, int i){
+                real =r;
+                img = i;
+            }        
+            void plus(ComplexNumbers c2){            
+                real += c2.real;            
+                img += c2.img;        
+            }        
+            void multiply(ComplexNumbers c2){            
+                int temp =real;            
+                real = real*(c2.real)-(img*(c2.img));            
+                img=(temp*c2.img)+(c2.real*img);       
+            }        
+            void print(){               
+                cout<<real<<' '<<"+"<<' '<<"i"<<img<<'\n';        
+            }
+
+};
+
+int main() {
+    int real1, imaginary1, real2, imaginary2;
+
+    cin >> real1 >> imaginary1;
+    cin >> real2 >> imaginary2;
+
+    ComplexNumbers c1(real1, imaginary1);
+    ComplexNumbers c2(real2, imaginary2);
+
+    int choice;
+    cin >> choice;
+
+    if (choice == 1) {
+        c1.plus(c2);
+        c1.print();
+    } else if (choice == 2) {
+        c1.multiply(c2);
+        c1.print();
+    } else {
+        return 0;
+    }
+
+}
