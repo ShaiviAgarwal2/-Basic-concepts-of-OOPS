@@ -1,0 +1,41 @@
+
+Check out the "Print Name and age Problem" from Coding Ninjas 
+https://www.codingninjas.com/codestudio/guided-paths/basics-of-c/content/118817/offering/1381817?utm_source=whatsapp&utm_medium=codestudio-social&utm_campaign=aa385f34-f4fc-4f07-ba92-b61840cf02ad
+
+
+#include <bits/stdc++.h> 
+#include<iostream>
+
+using namespace std;
+
+class Person {
+
+    // Complete the class
+    private: string name;
+    private: int age;
+    public:
+    void setValue(string name, int age){
+       this->name = name;
+       this->age = age;
+    }
+    void getValue(){
+       cout<<"The name of the person is "<<name<<" and the age is "<<age<<"."<<endl;
+       
+    }
+
+};
+
+int main() {
+
+    //Write your code here
+   string name;
+   cin >> name;
+   
+   int age;
+   cin>> age;
+    Person p;
+   p.setValue(name,age);
+   p.getValue();
+
+    return 0;
+}
